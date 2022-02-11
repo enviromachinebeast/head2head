@@ -82,12 +82,9 @@ def main():
         os.makedirs(path)
     else:
         print('Converting images in %s to .mp4 video.' % path)
-    image_dirs = ['fake','nmfc','eye_gaze','real','heatmap','masked_heatmap']
-    for dir in image_dirs:
-        if not os.path.isdir(os.path.join(path,dir)):
-            os.makedirs(os.path.join(path,dir))
-    print(os.listdir(path))
-    image_paths = make_images_dict(path)
+
+ 
+   image_paths = make_images_dict(path)
     video_name = path.replace('/', '-') + '.mp4'
     save_path = os.path.join(path, video_name)
     heatmap_video, masked_heatmap_video = None, None

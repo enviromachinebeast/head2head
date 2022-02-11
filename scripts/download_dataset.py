@@ -1,3 +1,4 @@
+
 import zipfile
 import wget
 import os
@@ -25,7 +26,8 @@ def main():
     args = parser.parse_args()
     print('Download complete %s dataset\n' % args.dataset)
     if args.dataset == 'head2headDataset' or args.dataset == 'head2headDatasetv2':
-        save_dir = os.path.join('datasets', args.dataset)
+        root_dir = os.path.realpath(os.path.join(os.path.dirname(__file__),'..', '..','..','..','data'))
+        save_dir = os.path.join(root_dir,'datasets', args.dataset)
         if args.dataset == 'head2headDataset':
             links_list = [('dataset.zip', 'https://www.dropbox.com/s/424wm7cp2fa4o2o/dataset.zip?dl=1'),
                           ('original_videos.zip', 'https://www.dropbox.com/s/ngibbzp1noxnyss/original_videos.zip?dl=1')]

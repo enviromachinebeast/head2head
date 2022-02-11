@@ -2,15 +2,15 @@ import cv2
 import os
 import numpy as np
 import pickle
-from preprocessing import transform
+import transform
 import sys
 import scipy.io as io
 import glob
 from scipy import optimize
 from tqdm import tqdm
-from preprocessing.multiface import fc_predictor
-from preprocessing.avatars import serialize
-from preprocessing.hephaestus import hephaestus_bindings as hephaestus
+from multiface import fc_predictor
+from avatars import serialize
+from hephaestus import hephaestus_bindings as hephaestus
 
 def _procrustes(X, Y, scaling=True, reflection='best'):
     """

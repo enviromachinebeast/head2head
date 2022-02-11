@@ -7,7 +7,7 @@ import sys
 import scipy.io as io
 from shutil import copyfile
 import itertools
-from preprocessing.reconstruction import NMFCRenderer
+from reconstruction import NMFCRenderer
 
 def mkdirs(paths):
     for path in paths:
